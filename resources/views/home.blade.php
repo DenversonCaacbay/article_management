@@ -48,6 +48,7 @@
     </div>
   </div>
 </div>
+<div class="scrolling-pagination">
     <div class="card  mt-3 border-0">
         <div class="card-header bg-light border-0">
             <div style="float:right"> <a class="btn btn-custom" href="{{ route('home.edit', $item->id) }}">Edit</a>
@@ -74,6 +75,9 @@
         </div>
     </div>
     @endforeach
+
+</div>
+{{$articles->links()}}
 </div>
 
 @endsection

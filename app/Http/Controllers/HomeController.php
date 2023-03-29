@@ -35,9 +35,9 @@ class HomeController extends Controller
 
         // $chunk = $products->chunk(5);
 
-        $articles = Article::oldest()->paginate(20);
+        $articles = Article::oldest()->paginate(2);
         return view('home', compact('articles'))
-            ->with('i', (request()->input('page', 1) - 1) * 20);
+            ->with('i', (request()->input('page', 1) - 1) * 2);
         // return view('home');
 
     }

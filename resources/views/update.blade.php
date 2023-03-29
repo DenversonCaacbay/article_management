@@ -5,7 +5,7 @@
 
 <div class="container">
     <div class="card border-0 p-3" style="margin:20px;">
-  <div class="card-header border-0">Edit Student</div>
+  <div class="card-header border-0">Edit Article</div>
   <div class="card-body">
        
       <form action="{{ url('home/' .$articles->id) }}" method="post">
