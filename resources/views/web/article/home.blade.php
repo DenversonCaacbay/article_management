@@ -17,7 +17,7 @@
                 <h3>Write an Article</h3>
             </div>
             <div class="col-2">
-                <a class="btn btn-custom" style="float:right" href="{{ route('home.create') }}">Write an Article</a>
+                <a class="btn btn-custom" style="float:right" href="{{ route('article.create') }}">Write an Article</a>
                 <!-- <button type="button" class="btn btn-custom" style="float:right" data-bs-toggle="modal" data-bs-target="#exampleModal">
                     Write an Article
                 </button> -->
@@ -37,25 +37,25 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-      <form class="mt-0 mb-0" action="{{ route('home.destroy', $item->id) }}" method="post" style="float:right;">
+      <form class="mt-0 mb-0" action="{{ route('article.destroy', $item->id) }}" method="post" style="float:right;">
                     @csrf
                     @method('DELETE')
                     <button type="submit" data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn btn-danger">Delete</button>
-                
+
             </form>
       </div>
-     
+
     </div>
   </div>
 </div>
 <div class="scrolling-pagination">
     <div class="card  mt-3 border-0">
         <div class="card-header bg-light border-0">
-            <div style="float:right"> <a class="btn btn-custom" href="{{ route('home.edit', $item->id) }}">Edit</a>
+            <div style="float:right"> <a class="btn btn-custom" href="{{ route('article.edit', $item->id) }}">Edit</a>
                     <button data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn btn-danger">Delete</button>
                 </div>
-                   
-                
+
+
 
         </div>
         <div class="row p-3">
@@ -70,7 +70,7 @@
                 <h2 hidden>{{ $loop->iteration }}</h2>
                 <h2>{{ $item->caption }}</h2>
                 <h2 class="text-limit">{{ $item->description }}</h2>
-                <a class="btn btn-custom" href="{{ route('home.show', $item->id) }}">Read More</a>
+                <a class="btn btn-custom" href="{{ route('article.show', $item->id) }}">Read More</a>
             </div>
         </div>
     </div>

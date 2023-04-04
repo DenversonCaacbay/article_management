@@ -19,9 +19,10 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::resource('/home', App\Http\Controllers\HomeController::class);
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::resource('/article', App\Http\Controllers\Web\ArticleController::class);
+
+Route::get('/web/article/home', [App\Http\Controllers\Web\ArticleController::class, 'index'])->name('home');
 
 // Route::resource('/home', App\Http\Controllers\HomeController::class);
-Route::get('/profile', [App\Http\Controllers\ProfileController::class, 'profile'])->name('profile');
+Route::get('/profile', [App\Http\Controllers\Web\ProfileController::class, 'profile'])->name('profile');
 

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Web;
 
 
 use App\Models\Article;
@@ -28,17 +28,10 @@ class HomeController extends Controller
      */
     public function index()
     {
-        // $articles = Article::all();
-        // return view ('home')->with('articles', $articles);
-
-        // $user = User::where('id', Auth::id())->get();
-
-        // $chunk = $products->chunk(5);
 
         $articles = Article::oldest()->paginate(2);
         return view('home', compact('articles'))
             ->with('i', (request()->input('page', 1) - 1) * 2);
-        // return view('home');
 
     }
 
@@ -63,7 +56,7 @@ class HomeController extends Controller
             $image = 'default.png';
         }
 
-        // 
+        //
         $articles = new Article();
         $articles->fill($request->all());
         $articles->photo = $image;
@@ -71,18 +64,7 @@ class HomeController extends Controller
 
         return redirect()->route('home')
             ->with('success', 'Article Created!');
-
-
-            
-        // $input = $request->all();
-        // Article::create($input);
-        // return redirect('home')->with('flash_message', 'Article Addedd!');  
     }
-
-    // public function show(Article $article)
-    // {
-    //     return view('view', compact('article'));
-    // }
 
 
 
@@ -91,8 +73,8 @@ class HomeController extends Controller
         $articles = Article::find($id);
         return view('view')->with('articles', $articles);
     }
-    
- 
+
+
     public function edit($id)
     {
         $articles = Article::find($id);
@@ -104,13 +86,13 @@ class HomeController extends Controller
         $articles = Article::find($id);
         $input = $request->all();
         $articles->update($input);
-        return redirect('home')->with('flash_message', 'Article Updated!');  
+        return redirect('home')->with('flash_message', 'Article Updated!');
     }
 
 
     public function destroy($id)
     {
         Article::destroy($id);
-        return redirect('home')->with('flash_message', 'Article deleted!');  
+        return redirect('home')->with('flash_message', 'Article deleted!');
     }
 }

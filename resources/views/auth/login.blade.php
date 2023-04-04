@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="container mt-2">
-<img src="{{ asset('public/images/logo.gif') }}" class="mb-3" style="border-radius: 10px; margin-left: auto; margin-right: auto; display: block;width:300px;">
+{{-- <img src="{{ asset('public/images/logo.gif') }}" class="mb-3" style="border-radius: 10px; margin-left: auto; margin-right: auto; display: block;width:300px;"> --}}
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card border-0">

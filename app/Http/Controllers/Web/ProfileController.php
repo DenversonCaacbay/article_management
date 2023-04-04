@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Web;
 
 use Illuminate\Http\Request;
 
@@ -23,6 +23,6 @@ class ProfileController extends Controller
      */
     public function profile()
     {
-        return view('profile');
+        return view('web.article.profile');
     }
 }
